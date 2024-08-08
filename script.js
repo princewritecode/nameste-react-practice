@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 const heading = <h1>Hello my name is prince</h1>;
 const heading2 = React.createElement('div',
     { id: 'parent' },
@@ -11,14 +11,17 @@ const heading2 = React.createElement('div',
     )
 );
 
-const heading3 = (
-    <>
-        <h2>Working on things
-            that matter</h2>
-        <h3>not what you are looking</h3>
-    </>
-);
-
-const container = <div>{heading}{heading2}{heading3}</div>;
+const Heading3 = () =>
+{
+    return (
+        <>
+            {heading}
+            {heading2}
+            <h2>Working on things
+                that matter</h2>
+            <h3>not what you are looking</h3>
+        </>
+    );
+};
 const rootElem = ReactDOM.createRoot(document.getElementById('root'));
-rootElem.render(container);
+rootElem.render(<Heading3></Heading3>);
